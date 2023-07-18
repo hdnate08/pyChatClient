@@ -6,12 +6,28 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>712</width>
-    <height>618</height>
+    <width>733</width>
+    <height>641</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+QLabel {
+    color: #ffffff;
+}
+
+QPushButton {
+    background-color: #555555;
+    color: #ffffff;
+    border: 1px solid #888888;
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="applicationTitle_label">
@@ -20,7 +36,7 @@
       <x>0</x>
       <y>0</y>
       <width>121</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -77,6 +93,34 @@
     <property name="title">
      <string>Chat</string>
     </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>520</y>
+       <width>541</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="sendMessage_pushButton">
+        <property name="text">
+         <string>Send Message</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="clearMessage_pushButton">
+        <property name="text">
+         <string>Clear Message</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+     <zorder>clearMessage_pushButton</zorder>
+     <zorder>sendMessage_pushButton</zorder>
+    </widget>
    </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
@@ -111,37 +155,8 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>530</y>
-      <width>541</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QPushButton" name="sendMessage_pushButton">
-       <property name="text">
-        <string>Send Message</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="clearMessage_pushButton">
-       <property name="text">
-        <string>Clear Message</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-    <zorder>clearMessage_pushButton</zorder>
-    <zorder>sendMessage_pushButton</zorder>
-   </widget>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
    <zorder>chatBox_groupBox</zorder>
+   <zorder>layoutWidget</zorder>
    <zorder>applicationTitle_label</zorder>
    <zorder>inputChat_textEdit</zorder>
    <zorder>chatLog_textBrowser</zorder>
@@ -151,7 +166,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>712</width>
+     <width>733</width>
      <height>21</height>
     </rect>
    </property>
