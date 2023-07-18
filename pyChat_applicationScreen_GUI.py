@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\Users\nateh\PycharmProjects\pyChatClient\pyChatClientGUI.ui'
+# Form implementation generated from reading ui file 'C:\Users\nateh\PycharmProjects\pyChatClient\pyChat_applicationScreen_GUI.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -11,11 +11,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(733, 641)
-        MainWindow.setStyleSheet("QWidget {\n"
+class Ui_applicationScreen_MainWindow(object):
+    def setupUi(self, applicationScreen_MainWindow):
+        applicationScreen_MainWindow.setObjectName("applicationScreen_MainWindow")
+        applicationScreen_MainWindow.resize(733, 641)
+        applicationScreen_MainWindow.setStyleSheet("QWidget {\n"
 "    background-color: #333333;\n"
 "    color: #ffffff;\n"
 "}\n"
@@ -29,7 +29,7 @@ class Ui_MainWindow(object):
 "    color: #ffffff;\n"
 "    border: 1px solid #888888;\n"
 "}")
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget = QtWidgets.QWidget(applicationScreen_MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.applicationTitle_label = QtWidgets.QLabel(self.centralwidget)
         self.applicationTitle_label.setGeometry(QtCore.QRect(0, 0, 121, 41))
@@ -70,7 +70,7 @@ class Ui_MainWindow(object):
         self.clearMessage_pushButton.raise_()
         self.sendMessage_pushButton.raise_()
         self.layoutWidget1 = QtWidgets.QWidget(self.centralwidget)
-        self.layoutWidget1.setGeometry(QtCore.QRect(10, 50, 121, 151))
+        self.layoutWidget1.setGeometry(QtCore.QRect(10, 50, 121, 161))
         self.layoutWidget1.setObjectName("layoutWidget1")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.layoutWidget1)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -89,25 +89,25 @@ class Ui_MainWindow(object):
         self.applicationTitle_label.raise_()
         self.inputChat_textEdit.raise_()
         self.chatLog_textBrowser.raise_()
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        applicationScreen_MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(applicationScreen_MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 733, 21))
         self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        applicationScreen_MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(applicationScreen_MainWindow)
         self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
+        applicationScreen_MainWindow.setStatusBar(self.statusbar)
 
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(applicationScreen_MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(applicationScreen_MainWindow)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, applicationScreen_MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.applicationTitle_label.setText(_translate("MainWindow", "pyChat"))
-        self.chatBox_groupBox.setTitle(_translate("MainWindow", "Chat"))
-        self.sendMessage_pushButton.setText(_translate("MainWindow", "Send Message"))
-        self.clearMessage_pushButton.setText(_translate("MainWindow", "Clear Message"))
-        self.login_pushButton.setText(_translate("MainWindow", "Login"))
-        self.register_pushButton.setText(_translate("MainWindow", "Register"))
-        self.exit_pushButton.setText(_translate("MainWindow", "Exit"))
+        applicationScreen_MainWindow.setWindowTitle(_translate("applicationScreen_MainWindow", "MainWindow"))
+        self.applicationTitle_label.setText(_translate("applicationScreen_MainWindow", "pyChat"))
+        self.chatBox_groupBox.setTitle(_translate("applicationScreen_MainWindow", "Chat"))
+        self.sendMessage_pushButton.setText(_translate("applicationScreen_MainWindow", "Send Message"))
+        self.clearMessage_pushButton.setText(_translate("applicationScreen_MainWindow", "Clear Message"))
+        self.login_pushButton.setText(_translate("applicationScreen_MainWindow", "Login"))
+        self.register_pushButton.setText(_translate("applicationScreen_MainWindow", "Register"))
+        self.exit_pushButton.setText(_translate("applicationScreen_MainWindow", "Exit"))

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>applicationScreen_MainWindow</class>
+ <widget class="QMainWindow" name="applicationScreen_MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -128,7 +128,7 @@ QPushButton {
       <x>10</x>
       <y>50</y>
       <width>121</width>
-      <height>151</height>
+      <height>161</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
