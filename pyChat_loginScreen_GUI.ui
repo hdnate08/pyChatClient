@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>813</width>
-    <height>666</height>
+    <width>550</width>
+    <height>550</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -70,6 +70,14 @@ QPushButton:hover { background-color: #66c011; }
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QLabel" name="currentDateTime_label">
+         <property name="font">
+          <font>
+           <family>Berlin Sans FB Demi</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
          <property name="text">
           <string>Tuesday, 7/18/2023 5:07 PM</string>
          </property>
@@ -89,7 +97,7 @@ QPushButton:hover { background-color: #66c011; }
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="exitButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -98,37 +106,8 @@ QPushButton:hover { background-color: #66c011; }
          </property>
          <property name="minimumSize">
           <size>
-           <width>55</width>
-           <height>55</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="resources.qrc">
-           <normaloff>:/icons/resources/icons/rotate.png</normaloff>:/icons/resources/icons/rotate.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>45</width>
-           <height>45</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_3">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>55</width>
-           <height>55</height>
+           <width>35</width>
+           <height>35</height>
           </size>
          </property>
          <property name="text">
@@ -140,8 +119,8 @@ QPushButton:hover { background-color: #66c011; }
          </property>
          <property name="iconSize">
           <size>
-           <width>45</width>
-           <height>45</height>
+           <width>20</width>
+           <height>20</height>
           </size>
          </property>
         </widget>
@@ -247,8 +226,14 @@ QPushButton:hover { background-color: #66c011; }
         </property>
         <property name="minimumSize">
          <size>
-          <width>350</width>
-          <height>200</height>
+          <width>300</width>
+          <height>250</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -265,7 +250,7 @@ QPushButton:hover { background-color: #66c011; }
           <number>35</number>
          </property>
          <property name="bottomMargin">
-          <number>35</number>
+          <number>25</number>
          </property>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -277,6 +262,14 @@ QPushButton:hover { background-color: #66c011; }
                <height>25</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Berlin Sans FB Demi</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
              <property name="text">
               <string>Username:</string>
              </property>
@@ -284,9 +277,15 @@ QPushButton:hover { background-color: #66c011; }
            </item>
            <item>
             <widget class="QLineEdit" name="username_lineEdit">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>200</width>
                <height>25</height>
               </size>
              </property>
@@ -304,6 +303,14 @@ QPushButton:hover { background-color: #66c011; }
                <height>25</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Berlin Sans FB Demi</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
              <property name="text">
               <string>Password:</string>
              </property>
@@ -311,11 +318,31 @@ QPushButton:hover { background-color: #66c011; }
            </item>
            <item>
             <widget class="QLineEdit" name="password_lineEdit">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>200</width>
                <height>25</height>
               </size>
+             </property>
+             <property name="font">
+              <font>
+               <strikeout>false</strikeout>
+              </font>
+             </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText|Qt::ImhSensitiveData</set>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
+             <property name="cursorPosition">
+              <number>0</number>
              </property>
             </widget>
            </item>
@@ -331,6 +358,63 @@ QPushButton:hover { background-color: #66c011; }
            </property>
            <property name="text">
             <string>Login</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="registerButton">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Register</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="forgotPasswordButton">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Forgot Password?</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>5</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="connectionStatusLabel">
+           <property name="font">
+            <font>
+             <family>Berlin Sans FB Demi</family>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Connection status placeholder</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
            </property>
           </widget>
          </item>
@@ -366,7 +450,7 @@ QPushButton:hover { background-color: #66c011; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>813</width>
+     <width>550</width>
      <height>21</height>
     </rect>
    </property>
