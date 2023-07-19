@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_loginScreen_MainWindow(object):
     def setupUi(self, loginScreen_MainWindow):
         loginScreen_MainWindow.setObjectName("loginScreen_MainWindow")
-        loginScreen_MainWindow.resize(800, 600)
+        loginScreen_MainWindow.resize(813, 666)
         loginScreen_MainWindow.setStyleSheet("#centralWidget {\n"
 " background: rgba(32, 80, 96, 100);\n"
 " }\n"
@@ -41,7 +41,13 @@ class Ui_loginScreen_MainWindow(object):
 "  border-radius: 3px;\n"
 "}\n"
 "\n"
-"QPushButton:hover { background-color: #66c011; }")
+"QPushButton:hover { background-color: #66c011; }\n"
+"\n"
+"#centralWidget\n"
+"{\n"
+"  background: rgba(32, 80, 96, 100);\n"
+"  border-image: url(:/images/resources/images/6204882.jpg);\n"
+"}")
         self.centralWidget = QtWidgets.QWidget(loginScreen_MainWindow)
         self.centralWidget.setObjectName("centralWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralWidget)
@@ -65,6 +71,10 @@ class Ui_loginScreen_MainWindow(object):
         self.pushButton_2.setSizePolicy(sizePolicy)
         self.pushButton_2.setMinimumSize(QtCore.QSize(55, 55))
         self.pushButton_2.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icons/resources/icons/rotate.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_2.setIcon(icon)
+        self.pushButton_2.setIconSize(QtCore.QSize(45, 45))
         self.pushButton_2.setObjectName("pushButton_2")
         self.horizontalLayout.addWidget(self.pushButton_2)
         self.pushButton_3 = QtWidgets.QPushButton(self.topPanel)
@@ -75,6 +85,10 @@ class Ui_loginScreen_MainWindow(object):
         self.pushButton_3.setSizePolicy(sizePolicy)
         self.pushButton_3.setMinimumSize(QtCore.QSize(55, 55))
         self.pushButton_3.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/icons/resources/icons/power.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_3.setIcon(icon1)
+        self.pushButton_3.setIconSize(QtCore.QSize(45, 45))
         self.pushButton_3.setObjectName("pushButton_3")
         self.horizontalLayout.addWidget(self.pushButton_3)
         self.verticalLayout.addWidget(self.topPanel)
@@ -94,8 +108,11 @@ class Ui_loginScreen_MainWindow(object):
         sizePolicy.setHeightForWidth(self.logo_label.sizePolicy().hasHeightForWidth())
         self.logo_label.setSizePolicy(sizePolicy)
         self.logo_label.setMinimumSize(QtCore.QSize(150, 150))
-        self.logo_label.setStyleSheet("border: 1px solid;")
+        self.logo_label.setStyleSheet("border: 1px solid;\n"
+"\n"
+"  border-image: url(:/images/resources/images/pumpkin-pie.png);")
         self.logo_label.setText("")
+        self.logo_label.setScaledContents(False)
         self.logo_label.setObjectName("logo_label")
         self.middlePanel.addWidget(self.logo_label)
         self.verticalLayout.addLayout(self.middlePanel)
@@ -156,7 +173,7 @@ class Ui_loginScreen_MainWindow(object):
         self.verticalLayout.addLayout(self.spacer)
         loginScreen_MainWindow.setCentralWidget(self.centralWidget)
         self.menubar = QtWidgets.QMenuBar(loginScreen_MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 813, 21))
         self.menubar.setObjectName("menubar")
         loginScreen_MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(loginScreen_MainWindow)
@@ -173,3 +190,4 @@ class Ui_loginScreen_MainWindow(object):
         self.label.setText(_translate("loginScreen_MainWindow", "Username:"))
         self.label_2.setText(_translate("loginScreen_MainWindow", "Password:"))
         self.login_pushButton.setText(_translate("loginScreen_MainWindow", "Login"))
+import resources_rc
