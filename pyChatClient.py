@@ -7,9 +7,10 @@ import socket
 
 
 class PyChatClient:
-    def __init__(self, server_address, server_port):
+    def __init__(self, server_address, server_port, connectionStatus):
         self.server_address = server_address
         self.server_port = server_port
+        self.connectionStatus = connectionStatus
         self.client_socket = None
 
     def connect(self):
@@ -17,9 +18,9 @@ class PyChatClient:
 
         try:
             self.client_socket.connect((self.server_address, self.server_port))
-            print("Connected to the server.")
+            self.connectionStatus.setText('Connected')
         except ConnectionRefusedError:
-            print("Connection refused. Make sure the server is running.")
+            self.connectionStatus.setText('Not Connected')
 
     def close(self):
         if self.client_socket is None:
