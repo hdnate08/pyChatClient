@@ -369,7 +369,7 @@ QPushButton:hover { background-color: #66c011; }
             </font>
            </property>
            <property name="text">
-            <string>Connection status placeholder</string>
+            <string/>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>

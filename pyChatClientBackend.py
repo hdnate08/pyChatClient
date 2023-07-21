@@ -4,10 +4,11 @@ Nathan Harris
 July 17, 2023
 """
 
-from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtCore import QTimer, QTime, QDate
-from pyChat_loginScreen_GUI import Ui_loginScreen_MainWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow
 from pyChatClient import PyChatClient
+from pyChat_loginScreen_GUI import Ui_loginScreen_MainWindow
+import config
 import time
 
 
@@ -26,29 +27,38 @@ class pyChatClientBackend:
         self.ui.exitButton.clicked.connect(self.exit)
 
         # Defaults setup
-        self.pychat_client = PyChatClient('127.0.0.7', 60002, self.ui.connectionStatusLabel)
-        self.clock = QTimer(self.window)
+        self.is_connected = False
+        self.pychat_client = PyChatClient(config.DEFAULT_IP, config.DEFAULT_PORT)
+        self.clock_timer = QTimer(self.window)
+        self.connection_timer = QTimer(self.window)
 
         # Default settings
         self.window.closeEvent = self.close_event
         self.ui.username_lineEdit.setPlaceholderText('Username')
         self.ui.password_lineEdit.setPlaceholderText('Password')
-        # Update the clock label every second
-        self.clock.timeout.connect(self.update_clock)
-        self.clock.start(1000)
 
-        # Connection setup
-        self.pychat_client.connect()
+        # Timers
+        self.clock_timer.timeout.connect(self.clock_updater)
+        self.clock_timer.start(config.CLOCK_TIMER_INTERVAL)
+        self.connection_timer.timeout.connect(self.connect_to_server)
+        self.connection_timer.start(config.CONNECTION_RETRY_INTERVAL)
 
-    def update_clock(self):
+#TODO: Implement check_connection() function which runs connect_to_server() if necessary
+    def connect_to_server(self):
+        if not self.is_connected:
+            self.is_connected = self.pychat_client.connect()
+            if self.is_connected:
+                self.ui.connectionStatusLabel.setText("Connected")
+            else:
+                self.ui.connectionStatusLabel.setText("Connection failed. Retrying...")
+
+    # Function for updating widgets (1000ms)
+    def clock_updater(self):
+        # Update GUI clock
         current_time = QTime.currentTime()
         current_date = QDate.currentDate()
-
-        # Format time and date
         time_text = current_time.toString("hh:mm:ss AP")  # 12-hour format with AM/PM
         date_text = current_date.toString("dddd, MMMM d, yyyy")  # e.g., Monday, July 1, 2023
-
-        # Combine time and date
         datetime_text = f"{date_text}  {time_text}"
         self.ui.currentDateTime_label.setText(datetime_text)
 

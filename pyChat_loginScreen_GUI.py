@@ -182,6 +182,7 @@ class Ui_loginScreen_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.connectionStatusLabel.setFont(font)
+        self.connectionStatusLabel.setText("")
         self.connectionStatusLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.connectionStatusLabel.setObjectName("connectionStatusLabel")
         self.verticalLayout_2.addWidget(self.connectionStatusLabel)
@@ -211,5 +212,4 @@ class Ui_loginScreen_MainWindow(object):
         self.login_pushButton.setText(_translate("loginScreen_MainWindow", "Login"))
         self.registerButton.setText(_translate("loginScreen_MainWindow", "Register"))
         self.forgotPasswordButton.setText(_translate("loginScreen_MainWindow", "Forgot Password?"))
-        self.connectionStatusLabel.setText(_translate("loginScreen_MainWindow", "Connection status placeholder"))
 import resources_rc
