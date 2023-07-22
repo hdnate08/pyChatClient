@@ -5,6 +5,7 @@ July 17, 2023
 """
 import socket
 
+
 class PyChatClient:
     def __init__(self, server_address, server_port):
         self.server_address = server_address

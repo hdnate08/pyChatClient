@@ -9,6 +9,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 from pyChatClient import PyChatClient
 from pyChat_loginScreen_GUI import Ui_loginScreen_MainWindow
 import config
+import socket
 import time
 
 
@@ -45,6 +46,7 @@ class pyChatClientBackend:
 
 #TODO: Implement check_connection() function which runs connect_to_server() if necessary
     def connect_to_server(self):
+        self.check_connection()
         if not self.is_connected:
             self.is_connected = self.pychat_client.connect()
             if self.is_connected:
@@ -52,7 +54,15 @@ class pyChatClientBackend:
             else:
                 self.ui.connectionStatusLabel.setText("Connection failed. Retrying...")
 
-    # Function for updating widgets (1000ms)
+    def check_connection(self):
+        if self.is_connected:
+            try:
+                self.pychat_client.client_socket.send(b"CHECK_CONNECTION")
+            except(socket.error, BrokenPipeError, ConnectionResetError):
+                self.is_connected = False
+
+
+    # Function for updating the clock (1000ms)
     def clock_updater(self):
         # Update GUI clock
         current_time = QTime.currentTime()
