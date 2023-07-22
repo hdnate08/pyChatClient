@@ -4,13 +4,12 @@ Nathan Harris
 July 17, 2023
 """
 
-from PyQt5.QtCore import QTimer, QTime, QDate
+from PyQt5.QtCore import QTimer, QTime, QDate, QThread
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from pyChatClient import PyChatClient
 from pyChat_loginScreen_GUI import Ui_loginScreen_MainWindow
 import config
 import socket
-import time
 
 
 class pyChatClientBackend:
@@ -44,8 +43,7 @@ class pyChatClientBackend:
         self.connection_timer.timeout.connect(self.connect_to_server)
         self.connection_timer.start(config.CONNECTION_RETRY_INTERVAL)
 
-#TODO: Implement check_connection() function which runs connect_to_server() if necessary
-    def connect_to_server(self):
+    def connect_to_server(self):  # Connect/reconnect to server (1000ms)
         self.check_connection()
         if not self.is_connected:
             self.is_connected = self.pychat_client.connect()
@@ -54,17 +52,14 @@ class pyChatClientBackend:
             else:
                 self.ui.connectionStatusLabel.setText("Connection failed. Retrying...")
 
-    def check_connection(self):
+    def check_connection(self):  # Check server connection and update is_connected (1000ms)
         if self.is_connected:
             try:
                 self.pychat_client.client_socket.send(b"CHECK_CONNECTION")
             except(socket.error, BrokenPipeError, ConnectionResetError):
                 self.is_connected = False
 
-
-    # Function for updating the clock (1000ms)
-    def clock_updater(self):
-        # Update GUI clock
+    def clock_updater(self):  # Update GUI clock (1000ms)
         current_time = QTime.currentTime()
         current_date = QDate.currentDate()
         time_text = current_time.toString("hh:mm:ss AP")  # 12-hour format with AM/PM

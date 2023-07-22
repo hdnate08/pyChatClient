@@ -24,4 +24,3 @@ class PyChatClient:
         if self.client_socket is None:
             return
         self.client_socket.close()
-        print("Connection closed.")
